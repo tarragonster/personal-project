@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  turborepo:
+    build:
+      context: .
+      target: debug
+    container_name: turborepo
+    ports:
+      - "2905:3000"
+      - "2906:3001"
+networks:
+  turbo-network:
+    driver: bridge
