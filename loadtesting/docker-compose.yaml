@@ -1,0 +1,20 @@
+version: "3"
+services:
+  k6:
+    container_name: k6
+    image: loadimpact/k6:latest
+    tty: true
+    working_dir: /work
+    stdin_open: true
+    entrypoint: /bin/sh
+    volumes:
+      - ./k6/loadtesting/:/work/loadtesting/
+  wrk2:
+    container_name: wrk2
+    image: bootjp/wrk2:latest
+    tty: true
+    working_dir: /work
+    stdin_open: true
+    entrypoint: /bin/sh
+    volumes:
+      - ./wrk2/loadtesting/:/work/loadtesting/

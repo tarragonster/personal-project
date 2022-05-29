@@ -1,0 +1,53 @@
+POST https://jxodljdegj.execute-api.us-east-1.amazonaws.com/test/create-nft
+Authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6ImJlYmYxMDBlYWRkYTMzMmVjOGZlYTU3ZjliNWJjM2E2YWIyOWY1NTUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYmV1LXN0YWdpbmciLCJhdWQiOiJiZXUtc3RhZ2luZyIsImF1dGhfdGltZSI6MTY1MTQ1MzMwMCwidXNlcl9pZCI6Ilk3QUZadzB2b0VYNDdxTDZXdTBMcE9VaWF6NjMiLCJzdWIiOiJZN0FGWncwdm9FWDQ3cUw2V3UwTHBPVWlhejYzIiwiaWF0IjoxNjUyMTE4NDAwLCJleHAiOjE2NTIxMjIwMDAsImVtYWlsIjoidHVuZ250KzFAc290YW5leHQuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsidHVuZ250KzFAc290YW5leHQuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.dqh7xmlKe6bm4DuWpGGaLtIEVaN16t6zZ7WY25t3H60g-4yTXLDpKMZeiz2KVkihs2u3IJlDCNrA26TBjbN-9o0s9motZU1SfzIaGXrGAw9SBSXvBa8r5_UoFyO73sudoT8FmyfNz-3cBavFuv_kNyFdwBnKa6zwS79haOSDUuZdY0x1bLTIxIwPY8sTMrbNsznkTKhpv04aDbfBwlh4i6uTig_km9m2ll2JXIg4YSXrstMylRrmJx3BEGNVy159bVUNXeL00kp8QlD28Gx9_18ilt9ZpTe3ynsjOdZYWyFiGIBonp5hrCVdHq-WH4i7E_qiM188aoqg-F_cF50ABA
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="data";
+
+{
+  "meta": {
+    "metaApi": {
+      "name": "lambda-test-1",
+      "description": "lambda-test-1",
+      "categoryIds": [
+        1,
+        2
+      ],
+      "noCopy": 1,
+      "quantity": 1,
+      "price": 1,
+      "market": 1,
+      "chain": 1,
+      "isFreeMinting": 1,
+      "saleType": 1,
+      "isSingle": true,
+      "receiveToken": "USDT",
+      "hashtag": [
+        "#aaa"
+      ]
+    },
+    "metaPreview": {
+      "imageId": "23jhk2.jpeg",
+      "type": "preview"
+    },
+    "metaVideo": {
+      "imageId": "w03jfd.mp4",
+      "type": "video",
+      "startTime": "00:00:00:00",
+      "endTime": "00:00:02:00"
+    }
+  }
+}
+
+--WebAppBoundary
+Content-Disposition: form-data; name="preview"; filename="23jhk2.jpeg"
+
+< ./cruella.jpeg
+
+--WebAppBoundary
+Content-Disposition: form-data; name="video"; filename="w03jfd.mp4"
+
+< ./cat_dimmer.mp4
+
+--WebAppBoundary--

@@ -1,0 +1,28 @@
+version: '3.3'
+networks:
+  dev:
+    name: louper
+services:
+  louper:
+    image: sonntuet1997/louper
+    networks:
+      - dev
+    environment:
+      - SUPABASE_URL
+      - SUPABASE_ANON_KEY
+      - BINANCE_TESTNET_ETHERSCAN_API_KEY
+      - BINANCE_ETHERSCAN_API_KEY
+      - POLYGON_ETHERSCAN_API_KEY
+      - MUMBAI_ETHERSCAN_API_KEY
+      - INFURA_API_KEY
+    restart: "always"
+  louper-tunnel:
+    image: kroniak/ssh-client
+    restart: "always"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        ssh -oStrictHostKeyChecking=no -p 22222 -R louper:80:louper:3000 uetbc.xyz auto-close=true
+    networks:
+      - dev

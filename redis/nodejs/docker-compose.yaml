@@ -1,0 +1,32 @@
+version: "3"
+services:
+  redis:
+    image: redis:6.0-alpine
+    volumes:
+      - ./pubsub-redis-single/storage/:/data/
+      - ./pubsub-redis-single/config/:/etc/redis/
+    networks: [ redis-single ]
+  pubsub-redis-single-publisher:
+    depends_on: [redis]
+    build:
+      context: ./pubsub-redis-single
+      target: publisher-debug
+    container_name: pubsub-redis-single-publisher
+    volumes:
+      - ./pubsub-redis-single/publisher/:/work/publisher/
+    ports:
+      - "91:3000"
+    networks: [ redis-single ]
+  pubsub-redis-single-subscriber:
+    depends_on: [ redis ]
+    build:
+      context: ./pubsub-redis-single
+      target: subscriber-debug
+    container_name: pubsub-redis-single-subscriber
+    volumes:
+      - ./pubsub-redis-single/subscriber/:/work/subscriber/
+    ports:
+      - "92:3000"
+    networks: [ redis-single ]
+networks:
+  redis-single:

@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  spring-cli:
+    build:
+      context: .
+      target: base
+    container_name: spring-cli
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./base:/work
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - spring-cli
+  configserver-demo:
+    build:
+      context: ./java/configserverdemo/
+      target: base
+    volumes:
+      - ./configrepo:/work/configrepo
+    ports:
+      - 1905:8080
+    networks:
+      - spring-cli
+networks:
+  spring-cli:

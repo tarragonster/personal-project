@@ -1,0 +1,10 @@
+version: "3"
+services:
+  js-ipfs:
+    build:
+      context: ./js-ipfs
+      target: debug
+    container_name: js-ipfs
+    volumes:
+      - ./js-ipfs/src/:/work/src/
+    tty: true

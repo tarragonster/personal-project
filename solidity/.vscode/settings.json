@@ -1,0 +1,8 @@
+{
+    "solidity.remappings": [
+        "@openzeppelin/=listcontract/node_modules/@openzeppelin"
+    ],
+    "[solidity]": {
+        "editor.defaultFormatter": "JuanBlanco.solidity"
+    },
+}

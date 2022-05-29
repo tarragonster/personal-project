@@ -1,0 +1,11 @@
+version: "3"
+services:
+  grpc:
+    build:
+      context: ./grpc
+      target: debug
+    container_name: grpc
+    volumes:
+      - ./grpc/src/:/work/src/
+    ports:
+      - "83:40000"

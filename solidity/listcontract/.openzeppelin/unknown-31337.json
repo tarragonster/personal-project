@@ -1,0 +1,130 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0xbDe364C8A9BAE9062927C1BA7A8061c87cf2e520",
+      "txHash": "0x644ffe5e983f8761db6f8eea9a8bc434c1ffa99b00d394090facc3e1c914f25d",
+      "kind": "uups"
+    },
+    {
+      "address": "0x5AE9c3d853bcfe87E048255E1937046a956FEC92",
+      "txHash": "0x3370d2213afef630823fe28afcfbfde98460f0f70820aa83099b27711aca14ac",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "a6c0bb4c25300907d1c5257e1fa64a3b6019a76867b4b63cc70add5fa8b70bf2": {
+      "address": "0xecE630e6860c880905965321A3CeA63F11bb25c5",
+      "txHash": "0xa78ddeaa812a353b98eaf9f402585ca86ab8b77859809986fa2cb46ac68855cf",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:87"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "uniswapRouter",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_address",
+            "contract": "Exchange",
+            "src": "contracts/Exchange.sol:11"
+          },
+          {
+            "label": "USDT",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_address",
+            "contract": "Exchange",
+            "src": "contracts/Exchange.sol:12"
+          },
+          {
+            "label": "wrappedToken",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_address",
+            "contract": "Exchange",
+            "src": "contracts/Exchange.sol:13"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "Exchange",
+            "src": "contracts/Exchange.sol:154"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    }
+  }
+}

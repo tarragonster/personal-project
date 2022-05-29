@@ -6,4 +6,9 @@ node_modules
 .gitconfig
 yarn.lock
 **/db
-**/mysql
+**/wp-content
+**/kafka/data
+./authentication/firebase/python
+./[I]Interview/algorithm/
+**/yarn.lock
+**/.nvm

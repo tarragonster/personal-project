@@ -1,0 +1,11 @@
+version: "3"
+services:
+  ws-notification-single:
+    build:
+      context: ./ws/notification-single
+      target: debug
+    container_name: ws-notification-single
+    volumes:
+      - ./ws/notification-single/publisher/:/work/publisher/
+    ports:
+      - "90:3000"

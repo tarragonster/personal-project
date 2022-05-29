@@ -1,0 +1,128 @@
+version: "3"
+
+services:
+  mysql-demo:
+    image: mysql
+    container_name: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: wpsota08
+      MYSQL_DATABASE: monsterra
+      MYSQL_USER: user
+      MYSQL_PASSWORD: wpsota08
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+    ports:
+      - 3306:3306
+  postgres-shard-one:
+    image: postgres:14.2-alpine
+    container_name: postgres-shard-one
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: shard
+    volumes:
+      - ./postgresql/sharding/dbinit:/docker-entrypoint-initdb.d
+      - ./postgresql/sharding/db-one:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+  postgres-shard-two:
+    image: postgres:14.2-alpine
+    container_name: postgres-shard-two
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: shard
+    volumes:
+      - ./postgresql/sharding/dbinit:/docker-entrypoint-initdb.d
+      - ./postgresql/sharding/db-two:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+  postgres-shard-three:
+    image: postgres:14.2-alpine
+    container_name: postgres-shard-three
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: shard
+    volumes:
+      - ./postgresql/sharding/dbinit:/docker-entrypoint-initdb.d
+      - ./postgresql/sharding/db-three:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+  adminer:
+    depends_on:
+      - postgres-shard-one
+      - postgres-shard-two
+      - postgres-shard-three
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 5555:8080
+#psql -U postgres -W connect postgres
+# killall Docker && open /Applications/Docker.app
+  node-sharding:
+    build:
+      context: ./postgresql/sharding/
+      target: debug
+    depends_on:
+      - postgres-shard-one
+      - postgres-shard-two
+      - postgres-shard-three
+    container_name: node-sharding
+    volumes:
+      - ./postgresql/sharding/src/:/work/src/
+    ports:
+      - "14:3000"
+  mongo-demo:
+    image: mongo
+    container_name: mongo-demo
+    environment:
+      MONGO_INITDB_DATABASE: dummydb
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb/config/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./mongodb/config/mongod.conf:/etc/mongo/mongod.conf
+      - ./mongodb/db:/data/db
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+  mongo-express:
+    image: mongo-express:0.54.0
+    container_name: mongo-express
+    depends_on:
+      - mongo-demo
+    ports:
+      - 1305:8081
+    volumes:
+      - ./mongodb/db:/data/db
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo-demo #https://github.com/mongo-express/mongo-express-docker/issues/35
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: pass
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: pass
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+  nodejs-mongo:
+    build:
+      context: ./mongodb
+      target: debug
+    container_name: nodejs-mongo
+    depends_on:
+      - mongo-demo
+    volumes:
+      - ./mongodb/src/:/work/src/
+    ports:
+      - "1405:3000"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,85 @@
+version: "3"
+services:
+  httpd:
+    container_name: httpd
+    image: httpd:2.4
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./httpd(Apache)/public-html/:/usr/local/apache2/htdocs/
+    ports:
+      - "8080:80"
+  nginx:
+    container_name: nginx
+    image: nginx:1.21.6-alpine
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./nginx/public-html:/usr/share/nginx/html
+      - ./nginx/config:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8081:80"
+  nodejs:
+    build:
+      context: ./nodejs
+      target: debug
+    container_name: nodejs
+    volumes:
+      - ./nodejs/src/:/work/src/
+    ports:
+      - "85:3000"
+  fastify-cluster:
+    build:
+      context: ./fastify-cluster
+      target: debug
+    container_name: fastify-cluster
+    volumes:
+      - ./fastify-cluster/src/:/work/src/
+    ports:
+      - "86:3000"
+  fastify-single:
+    build:
+      context: ./fastify-single
+      target: debug
+    container_name: fastify-single
+    volumes:
+      - ./fastify-single/src/:/work/src/
+    ports:
+      - "87:3000"
+  fastify-cluster-availability:
+    build:
+      context: ./fastify-cluster-availability
+      target: debug
+    container_name: fastify-cluster-availability
+    volumes:
+      - ./fastify-cluster-availability/src/:/work/src/
+    ports:
+      - "88:3000"
+  fastify-cluster-pm2:
+    build:
+      context: ./fastify-cluster-pm2
+      target: debug
+    container_name: fastify-cluster-pm2
+    volumes:
+      - ./fastify-cluster-pm2/src/:/work/src/
+    ports:
+      - "89:3000"
+  nodejs-tcp:
+    build:
+      context: ./nodejs-tcp
+      target: debug
+    container_name: nodejs-tcp
+    volumes:
+      - ./nodejs-tcp/src/:/work/src/
+    ports:
+      - "14:8080"
+  nodejs-udp:
+    build:
+      context: ./nodejs-udp
+      target: debug
+    container_name: nodejs-udp
+    volumes:
+      - ./nodejs-udp/src/:/work/src/
+    ports:
+      - "15:8080/udp" # specify ports in a docker TCP or UDP. https://stackoverflow.com/questions/60061703/when-i-specify-ports-in-a-docker-compose-yml-file-is-it-tcp-or-udp

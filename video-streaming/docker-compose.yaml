@@ -1,0 +1,11 @@
+version: "3"
+services:
+  video-chunking:
+    build:
+      context: ./video-chunking
+      target: debug
+    container_name: video-chunking
+    volumes:
+      - ./video-chunking/src/:/work/src/
+    ports:
+      - "12:3000"
