@@ -4,3 +4,6 @@ node_modules
 .idea
 .env
 .gitconfig
+yarn.lock
+**/db
+**/mysql
