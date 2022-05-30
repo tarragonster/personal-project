@@ -48,7 +48,7 @@ const config: any = {
       // gasPrice: 100000000000000,
       accounts: [
         PRIVATE_KEY ||
-          "cbb22eb483998270a509edac5cfcf2a7ad5861b23744c2b04b5e2387c4c95112"
+          "e6bf2d3c72fee1c81721e0039fa0bbbfb28ea15a7c49917e44d7cc1efd51e62c"
       ],
     },
   },
