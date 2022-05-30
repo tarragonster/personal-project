@@ -26,3 +26,5 @@
 
 [Vid] Alex Ziskind - [Fastest way to build a monorepo | Turborepo vs Nx](https://www.youtube.com/watch?v=NM-aab5GpKo&ab_channel=AlexZiskind) \
 [Code] vsavkin - [large-monorepo benchmark Nx, Turbo, and Lerna](https://github.com/vsavkin/large-monorepo) \
+
+[Code] Elvincth - [turbo-strapi-nextjs](https://github.com/Elvincth/turbo-strapi-nextjs) \
