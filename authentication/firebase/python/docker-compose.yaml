@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  firebase-auth:
+    build:
+      context: .
+      target: runtime
+    container_name: firebase-auth
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./src/:/app/
+    networks:
+      - firebase-auth
+networks:
+  firebase-auth:

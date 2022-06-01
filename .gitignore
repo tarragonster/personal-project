@@ -12,3 +12,4 @@ yarn.lock
 ./[I]Interview/algorithm/
 **/yarn.lock
 **/.nvm
+**/.env
