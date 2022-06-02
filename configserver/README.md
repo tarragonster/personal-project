@@ -14,6 +14,11 @@ Re-compile code
 docker-compose up -d --build configserver-demo
 ```
 
+###Retrieve config
+```
+http://localhost:1905/work/configrepo
+```
+
 ##Reference
 
 [Vid] That Devops Guy - [a DevOps engineer tries out Java Springboot for the first time](https://www.youtube.com/watch?v=7-n6E4d51M0&ab_channel=ThatDevOpsGuy) \

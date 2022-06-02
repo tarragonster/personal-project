@@ -111,4 +111,6 @@ added deleted or updates. Type of ingress controller
 
 [Lib] Kubernetes SIGs - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/) \
 [Code] Kubernetes SIGs - [kind](https://github.com/kubernetes-sigs/kind/) \
-[Vid] That DevOps Guy - [Kubernetes Terminology](https://www.youtube.com/watch?v=Ero82CCQIGk)
+[Vid] That DevOps Guy - [Kubernetes Terminology](https://www.youtube.com/watch?v=Ero82CCQIGk) \
+[Blog] Nic Vermande - [How To Build a CI/CD Pipeline for Kubernetes Stateful Applications](https://betterprogramming.pub/how-to-build-a-ci-cd-pipeline-for-kubernetes-stateful-applications-aef6c8c5edc2) \
+[]
