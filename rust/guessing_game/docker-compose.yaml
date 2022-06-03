@@ -1,0 +1,9 @@
+version: '3'
+services:
+  guessing-game:
+    build:
+      context: .
+      target: runtime
+    container_name: httpd
+    tty: true
+    stdin_open: true
