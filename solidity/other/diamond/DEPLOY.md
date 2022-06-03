@@ -60,3 +60,8 @@ yarn hardhat verify --network bsc_test_net $(cat ./address/market)
 ```bash
 yarn hardhat run --network bsc_test_net scripts/verify-contract.js
 ```
+
+
+# Reference
+
+[Link] [Louper Scanner](https://louper.huuk.market/diamond/0x0cd367c2240B2DC3598b09aa1ed37E399bD5DF85?network=binance_testnet) \
