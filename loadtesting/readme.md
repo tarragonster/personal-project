@@ -2,6 +2,8 @@
 
 Check out [the document](https://k6.io/docs/)
 
+Test TCP: [WebSockets testing](https://k6.io/docs/using-k6/protocols/websockets/)
+
 ## Start your preferred load testing tool
 
 ```

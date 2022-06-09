@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  rabbit-1:
+    hostname: rabbit-1
+    container_name: rabbit-1
+    image: rabbitmq:3.8-management
+    volumes:
+      - "./rabbit_enabled_plugins:/etc/rabbitmq/enabled_plugins"
+    networks:
+      - rabbits
+    ports:
+      - "5672:5672"
+      - "8080:15672"
+networks:
+  rabbits:
+    name: rabbits

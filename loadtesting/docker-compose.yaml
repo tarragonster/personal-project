@@ -18,3 +18,12 @@ services:
     entrypoint: /bin/sh
     volumes:
       - ./wrk2/loadtesting/:/work/loadtesting/
+  hping:
+    container_name: hping
+    image: gophernet/hping
+    tty: true
+    working_dir: /work
+    stdin_open: true
+    entrypoint: /bin/sh
+    volumes:
+      - ./hping/loadtesting/:/work/loadtesting/
