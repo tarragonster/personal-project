@@ -18,4 +18,5 @@ Ref: [10 Strategies](https://www.youtube.com/watch?v=Xg9ihH15Uto&ab_channel=Fire
 
 ##Reference
 
-[Vid] Cloud Advocate - [DevOps Certifications to boost your resume](https://www.youtube.com/watch?v=g8KHWEGuoxI&ab_channel=CloudAdvocate)
+[Vid] Cloud Advocate - [DevOps Certifications to boost your resume](https://www.youtube.com/watch?v=g8KHWEGuoxI&ab_channel=CloudAdvocate) \
+[Vid] PIRATE KING - [WINNING RESUME](https://www.youtube.com/watch?v=XcmrRloeSEw&ab_channel=PIRATEKING)

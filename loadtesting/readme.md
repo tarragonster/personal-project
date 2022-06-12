@@ -1,8 +1,9 @@
 # Load Testing Tool
 
-Check out [the document](https://k6.io/docs/)
-
-Test TCP: [WebSockets testing](https://k6.io/docs/using-k6/protocols/websockets/)
+Check out [the document](https://k6.io/docs/) \
+Test TCP: [WebSockets testing](https://k6.io/docs/using-k6/protocols/websockets/) \
+[Blog] [Hping Tips and Tricks](https://iphelix.medium.com/hping-tips-and-tricks-85698751179f) \
+[Code] nerdalert - [net-tools](https://github.com/gopher-net/dockerized-net-tools/tree/master/fping)
 
 ## Start your preferred load testing tool
 
