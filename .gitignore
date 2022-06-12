@@ -13,3 +13,4 @@ yarn.lock
 **/yarn.lock
 **/.nvm
 **/.env
+**/listing.md
