@@ -14,3 +14,9 @@ const configService = app.get(ConfigService);
 ```
 - configService will be then used as an instance and injected into other class
   through constructor/method
+
+
+### References
+
+[Github] Michael Guay - [nestjs repo](https://github.com/mguay22) \
+[Github] Vladimir Agaev - [nestjs-jwts](https://github.com/vladwulf/nestjs-jwts) \
