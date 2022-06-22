@@ -20,3 +20,7 @@ const configService = app.get(ConfigService);
 
 [Github] Michael Guay - [nestjs repo](https://github.com/mguay22) \
 [Github] Vladimir Agaev - [nestjs-jwts](https://github.com/vladwulf/nestjs-jwts) \
+[QA] [Nestjs Dependency Injection - Inject service into service](https://stackoverflow.com/questions/61953178/nestjs-dependency-injection-inject-service-into-service) \
+
+`If you are needing the AService in another module, you should add the AService to the AModule's exports array, and add AModule to the new module's imports array.
+`
