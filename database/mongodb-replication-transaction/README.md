@@ -1,5 +1,14 @@
 # Mongodb replication transaction
 
+###Understand Replica Set Primary
+
+- The primary is the only member in the replica set that receives write 
+  operations. MongoDB applies write operations on the primary and then 
+  records the operations on the primary's oplog. Secondary members replicate
+  this log and apply the operations to their data sets.
+
+- Ref: [Replica Set Primary](https://www.mongodb.com/docs/manual/core/replica-set-primary/)
+
 ### Start mongoose replication demo
 1. Generate an authentication key
 ```shell
@@ -34,6 +43,10 @@ uncomment "throw new Error('lmao dead');" in app.js
 http://localhost:207/data
 ```
 
+- Ref: ERIC CABREL TIOGO - [Create a replica set in MongoDB with Docker Compose](https://blog.tericcabrel.com/mongodb-replica-set-docker-compose/)
+- Ref: Vishal Agrawal - [MongoDB Replica Set Configuration: 7 Easy Steps](https://hevodata.com/learn/mongodb-replica-set-config/)
+- Ref: Soham Kamani - [Creating a MongoDB Replica Set Using Docker](https://www.sohamkamani.com/docker/mongo-replica-set/)
+
 ### withTransaction()
 
 - retrying either the commit operation
@@ -42,6 +55,12 @@ http://localhost:207/data
   
 - Ref: [withTransaction](https://mongodb.github.io/node-mongodb-native/3.2/api/ClientSession.html#withTransaction)
 - Ref: [db.withTransaction using async/await not rolling back](https://github.com/dmfay/massive-js/issues/617)
+
+###startTransaction()
+
+- Must be used with startTransaction, commitTransaction, abortTransaction
+
+- Ref: [How to use mongoose to start a session for transaction?](https://stackoverflow.com/questions/67879357/nestjs-how-to-use-mongoose-to-start-a-session-for-transaction) \
 
 ### Generate an authentication key
 1. Generate an authentication key
