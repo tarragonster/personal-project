@@ -1,0 +1,138 @@
+version: "3"
+
+services:
+  mongo1:
+    hostname: mongo1
+    image: mongo
+    container_name: mongo1
+    environment:
+      MONGO_INITDB_DATABASE: dummydb
+#      MONGO_INITDB_ROOT_USERNAME: admin
+#      MONGO_INITDB_ROOT_PASSWORD: pass
+    expose:
+      - 27017
+    ports:
+      - 30001:27017
+    volumes:
+      - ./keys/mongo-key:/etc/mongodb/keys/mongo-key
+      - ./config/mongo-init-primary-mongo-1.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./config/mongod-mongo-1.conf:/etc/mongo/mongod.conf
+      - ./db-1:/data/db
+    networks:
+      - mongors-network
+    command: mongod --replSet my-mongo-set
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+  mongo2:
+    hostname: mongo2
+    image: mongo
+    container_name: mongo2
+    #    environment:
+    #      MONGO_INITDB_DATABASE: dummydb
+    expose:
+      - 27017
+    ports:
+      - 30002:27017
+    volumes:
+      - ./keys/mongo-key:/etc/mongodb/keys/mongo-key
+      - ./config/mongo-init-secondary-mongo-2.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./config/mongod-mongo-2.conf:/etc/mongo/mongod.conf
+      - ./db-2:/data/db
+    networks:
+      - mongors-network
+    command: mongod --replSet my-mongo-set
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+  mongo3:
+    hostname: mongo3
+    image: mongo
+    container_name: mongo3
+    #    environment:
+    #      MONGO_INITDB_DATABASE: dummydb
+    expose:
+      - 27017
+    ports:
+      - 30003:27017
+    volumes:
+      - ./keys/mongo-key:/etc/mongodb/keys/mongo-key
+      - ./config/mongo-init-secondary-mongo-3.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./config/mongod-mongo-3.conf:/etc/mongo/mongod.conf
+      - ./db-3:/data/db
+    networks:
+      - mongors-network
+    command: mongod --replSet my-mongo-set
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+  # this container will exit after executing the command
+  mongoinit:
+    hostname: mongoinit
+    image: mongo
+    container_name: mongoinit
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./keys/mongo-key:/etc/mongodb/keys/mongo-key
+      - ./config/mongod-mongo-init.conf:/etc/mongo/mongod.conf
+    links:
+      - mongo1
+    networks:
+      - mongors-network
+    command: >
+      /bin/sh -c "
+        echo 'start'
+        sleep 10s
+        mongo --host mongo1:27017 --eval \" config = {'_id' : 'my-mongo-set', 'members' : [{'_id' : 0, 'host' : 'mongo1:27017'}, {'_id' : 1, 'host' : 'mongo2:27017'}, {'_id' : 2, 'host' : 'mongo3:27017'}]}; rs.secondaryOk(); rs.initiate(config); \""
+  nodejs-mongo-transaction:
+    build:
+      context: .
+      target: debug
+    container_name: mongoose-transaction
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    volumes:
+      - ./src/:/work/src/
+    ports:
+      - "0207:3000"
+    networks:
+      - mongors-network
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+  mongo-express:
+    image: mongo-express:0.54.0
+    container_name: mongo-express
+    restart: unless-stopped
+    depends_on:
+      - mongoinit
+    ports:
+      - 1305:8081
+    volumes:
+      - ./db-1:/data/db
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo1 #https://github.com/mongo-express/mongo-express-docker/issues/35
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: pass
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: pass
+    networks:
+      - mongors-network
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  mongors-network:
+    driver: bridge

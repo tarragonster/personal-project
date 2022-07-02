@@ -14,3 +14,7 @@ yarn.lock
 **/.nvm
 **/.env
 **/listing.md
+**/db-1
+**/db-2
+**/db-3
+**/mongo-key
