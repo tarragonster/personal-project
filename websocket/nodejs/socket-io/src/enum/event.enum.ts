@@ -1,0 +1,3 @@
+export enum EventEnum {
+  WALLET_BALANCE_INFO='WALLET_BALANCE_INFO'
+}
