@@ -17,3 +17,12 @@ Ref: [Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditio
 - Type and Interface will check on compile time
 
 Ref: [Interfaces vs Types in TypeScript](https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript)
+
+###Check if Variable is undefined or null
+
+```javascript
+console.log(null == undefined);  // true
+console.log(null === undefined); // false
+```
+
+Ref: [JavaScript: Check if Variable is undefined or null](https://stackabuse.com/javascript-check-if-variable-is-a-undefined-or-null/)

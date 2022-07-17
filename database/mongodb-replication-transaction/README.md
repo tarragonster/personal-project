@@ -119,7 +119,8 @@ mongo --eval "printjson(db.serverStatus())"
 
 [Blog] [Setup MongoDB Replication](https://medium.com/nonstopio/setup-mongodb-replication-da22d07e526) \
 [Vid] [Setup MongoDB for Production deployment](https://www.youtube.com/watch?v=gChzfhVGqp8) \
-
+[Vid] [Setup Mongodb Replication hoàn tiền lại tài khoản nếu giao dịch lỗi (2) | Transaction Mongodb Nodejs](https://www.youtube.com/watch?v=fQPB5TPqcGM&t=616s&ab_channel=TipsJavascript)
+- bindIp to private ip address
 ### Reference
 
 [Docs] Tidelift Subscription - [Transactions in Mongoose](https://mongoosejs.com/docs/transactions.html) \

@@ -42,6 +42,7 @@ const configService = app.get(ConfigService);
 ### class-validator (validate dto)
 
 - Ref: [class-validator](https://github.com/typestack/class-validator)
+- Ref [@Transform](https://github.com/typestack/class-transformer)
 
 ### Nested schema with decorators
 

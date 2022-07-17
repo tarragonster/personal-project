@@ -9,7 +9,6 @@ yarn.lock
 **/wp-content
 **/kafka/data
 ./authentication/firebase/python
-./[I]Interview/algorithm/
 **/yarn.lock
 **/.nvm
 **/.env
@@ -18,3 +17,4 @@ yarn.lock
 **/db-2
 **/db-3
 **/mongo-key
+\[I\]Interview/

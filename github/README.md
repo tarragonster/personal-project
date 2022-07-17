@@ -24,3 +24,12 @@ Ref: [How do I undo 'git add' before commit?](https://stackoverflow.com/question
 
 Ref: [Can I specify multiple users for myself in .gitconfig?](https://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig) \
 
+- How to remove files from a folder in .gitignore?
+
+```shell
+git rm -r --cached Resources/
+git commit -m "Delete Resources content, now ignored"
+git push
+```
+
+Ref: [How to remove files from a folder in .gitignore?](https://stackoverflow.com/questions/71958273/how-to-remove-files-from-a-folder-in-gitignore)
