@@ -19,3 +19,5 @@ yarn.lock
 **/mongo-key
 \[I\]Interview/
 asset-management/
+**/target
+**/Cargo.lock
