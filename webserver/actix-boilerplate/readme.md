@@ -1,5 +1,9 @@
 # Actix boilerplate
 
+###1. OAuth2 with actix and yew
+
+Ref: [Build Auth Into Your Rust Web Application (OAuth2)](https://www.youtube.com/watch?v=S8Usi3zsLIs&ab_channel=CodetotheMoon) \
+
 ###Reference
 
 [Docs] actix - [examples](https://github.com/actix/examples) \
