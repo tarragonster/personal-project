@@ -7,7 +7,15 @@ rustc --version
 rustup update stable
 ```
 
-###2. Composition
+###2. Cargo cli-command
+
+```shell
+cargo build
+cargo run
+cargo test <fuc_name>
+```
+
+###3. Composition
 
 1. What is composite pattern
     - Partitioning design pattern
