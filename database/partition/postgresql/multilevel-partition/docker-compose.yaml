@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  list-partition:
+    image: postgres:14.2-alpine
+    container_name: multi-partition
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: multi-partition
+    volumes:
+      - ./dbinit:/docker-entrypoint-initdb.d
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
