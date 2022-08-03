@@ -1,5 +1,17 @@
 #Github
 
+## Git config
+
+- Include .gitconfig to config file inside .git
+
+```shell
+git config --local include.path "$PWD"/.gitconfig
+```
+
+- Ref: [Is it possible to include a file in your .gitconfig](https://stackoverflow.com/questions/1557183/is-it-possible-to-include-a-file-in-your-gitconfig) \
+
+- Use "$PWD"/.gitconfig instead, if you want to load the file from the current directory.
+
 ## Commandline
 - cherry pick
 ```
