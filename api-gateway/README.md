@@ -1,18 +1,18 @@
-#All type of api-gateway
+# All type of api-gateway
 
-###Aws Gateway
+### Aws Gateway
 
 Ref: [What is Amazon API Gateway?](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) \
 
-###Kong Gateway
+### Kong Gateway
 
 Ref: [Kong gateway](https://konghq.com/kong) \
 Ref: [kong-community](https://konghq.com/install#kong-community)
 
-###Zuul Gateway
+### Zuul Gateway
 
 Ref: [Zuul](https://github.com/Netflix/zuul)
 
-###Kraken Gateway
+### Kraken Gateway
 
 Ref: [krakend gateway](https://www.krakend.io)
