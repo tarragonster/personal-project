@@ -1,0 +1,3 @@
+[submodule "api-gateway/submodule-go-microservice/go-mcs-api-gateway"]
+	path = api-gateway/submodule-go-microservice/go-mcs-api-gateway
+	url = github.com-tug:tarragonster/go-mcs-api-gateway.git
