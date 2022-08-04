@@ -44,4 +44,4 @@ git commit -m "Delete Resources content, now ignored"
 git push
 ```
 
-Ref: [How to remove files from a folder in .gitignore?](https://stackoverflow.com/questions/71958273/how-to-remove-files-from-a-folder-in-gitignore)
+Ref: [How to remove files from a folder in .gitignore?](https://stackoverflow.com/questions/71958273/how-to-remove-files-from-a-folder-in-gitignore) \
