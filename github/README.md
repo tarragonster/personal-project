@@ -45,3 +45,17 @@ git push
 ```
 
 Ref: [How to remove files from a folder in .gitignore?](https://stackoverflow.com/questions/71958273/how-to-remove-files-from-a-folder-in-gitignore) \
+
+
+## Submodule
+
+- Create submodule
+
+```shell
+git submodule add github.com-tug:tarragonster/go-mcs-api-gateway.git
+```
+
+Submodule will be added to the directory
+
+- Ref: [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html) \
+- Ref: Cameron McKenzie - [Vid] [Add git submodules to GitHub example](https://www.youtube.com/watch?v=eJrh5IjWSGM&ab_channel=CameronMcKenzie) \

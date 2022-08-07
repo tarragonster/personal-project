@@ -22,3 +22,4 @@ asset-management/
 **/target
 **/Cargo.lock
 **/build
+**/.vscode
