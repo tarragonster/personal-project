@@ -4,3 +4,9 @@
 [submodule "api-gateway/submodule-go-microservice/go-mcs-api-auth"]
 	path = api-gateway/submodule-go-microservice/go-mcs-api-auth
 	url = github.com-tug:tarragonster/go-mcs-api-auth.git
+[submodule "api-gateway/submodule-go-microservice/go-mcs-api-order"]
+	path = api-gateway/submodule-go-microservice/go-mcs-api-order
+	url = github.com-tug:tarragonster/go-mcs-api-order.git
+[submodule "api-gateway/submodule-go-microservice/go-mcs-api-product"]
+	path = api-gateway/submodule-go-microservice/go-mcs-api-product
+	url = github.com-tug:tarragonster/go-mcs-api-product.git
