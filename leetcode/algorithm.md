@@ -214,6 +214,11 @@ Ref: [Iterative & Recursive - Binary Tree Inorder Traversal](https://www.youtube
 
 3. Postorder Traversal (Left-Right-Root)
 
+
+### Kadane’s Algorithm
+
+Ref: [Maximum Subarray Sum: Kadane’s Algorithm](https://www.interviewbit.com/blog/maximum-subarray-sum/#:~:text=Kadane's%20Algorithm%20is%20an%20iterative,ending%20at%20the%20previous%20position.) \
+
 ## References
 
 [Cheatsheet] [Know Thy Complexities!](https://www.bigocheatsheet.com) \
