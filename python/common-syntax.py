@@ -62,3 +62,6 @@ thisdict = {
 x = thisdict.get("model")
 x = thisdict.items()
 
+# if else shorthand
+
+a = headA if a is None else a.next

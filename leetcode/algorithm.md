@@ -219,6 +219,29 @@ Ref: [Iterative & Recursive - Binary Tree Inorder Traversal](https://www.youtube
 
 Ref: [Maximum Subarray Sum: Kadane’s Algorithm](https://www.interviewbit.com/blog/maximum-subarray-sum/#:~:text=Kadane's%20Algorithm%20is%20an%20iterative,ending%20at%20the%20previous%20position.) \
 
+### Boyer-Moore Majority Vote Algorithm
+
+```shell
+public class Solution {
+    public int majorityElement(int[] num) {
+
+        int major=num[0], count = 1;
+        for(int i=1; i<num.length;i++){
+            if(count==0){
+                count++;
+                major=num[i];
+            }else if(major==num[i]){
+                count++;
+            }else count--;
+            
+        }
+        return major;
+    }
+}
+```
+
+Ref: [A Linear Time Majority Vote Algorithm](https://www.cs.utexas.edu/~moore/best-ideas/mjrty/)
+
 ## References
 
 [Cheatsheet] [Know Thy Complexities!](https://www.bigocheatsheet.com) \
