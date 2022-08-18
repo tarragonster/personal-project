@@ -13,4 +13,5 @@ Ans: change the "username" to "default"
 [Linux - Install redis-cli only](https://stackoverflow.com/questions/21795340/linux-install-redis-cli-only) \
 [Redis-cli, the Redis command line interface](https://redis.io/topics/rediscli) \
 [Connecting to nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes-connecting.html)
-[redis](https://www.npmjs.com/package/redis)
+[redis](https://www.npmjs.com/package/redis) \
+[System Design: Why is single-threaded Redis so fast?](https://www.youtube.com/watch?v=5TRFpFBccQM&ab_channel=ByteByteGo) \
