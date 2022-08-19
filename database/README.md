@@ -1,7 +1,7 @@
 # Database
 
-##Sql
-###How to improve MySQL Performance?
+## Sql
+### How to improve MySQL Performance?
 - System MySQL Performance
     1. Storage -> ssd to improve performance
     2. Processor -> use top -> Pay attention to the MySQL processes and the percentage of processor usage they require
@@ -30,5 +30,11 @@
     11. Partitioning
     12. Sharding
     
-Ref: [MySQL Performance Tuning and Optimization Tips](https://phoenixnap.com/kb/improve-mysql-performance-tuning-optimization)
-##No Sql
+### Drawback of indexes
+- The index itself occupies space on disk and memory (when used)
+- When data is inserted/updated/deleted, then the index needs to be updated as well as the original data (re-index)
+
+### References
+Ref: [What are the disadvantages to Indexes in database tables?](https://stackoverflow.com/questions/41410482/what-are-the-disadvantages-to-indexes-in-database-tables) \
+Ref: [MySQL Performance Tuning and Optimization Tips](https://phoenixnap.com/kb/improve-mysql-performance-tuning-optimization) \
+## No Sql
