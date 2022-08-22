@@ -23,3 +23,4 @@ asset-management/
 **/Cargo.lock
 **/build
 **/.vscode
+**/better-developer
