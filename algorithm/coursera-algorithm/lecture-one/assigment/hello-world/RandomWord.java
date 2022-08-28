@@ -5,11 +5,17 @@ import edu.princeton.cs.algs4.StdRandom;
 public class RandomWord {
 
     public static void main(String[] args) {
-        StdOut.println(StdRandom.bernoulli());
-//        while(!StdIn.isEmpty()) {
-//            String champion = StdIn.readString();
-//            StdOut.println("Your string was: " + champion);
-//        }
+        int count = 0;
+        String champion = "";
+
+        while (!StdIn.isEmpty()) {
+            count++;
+            String input = StdIn.readString();
+            if (StdRandom.bernoulli((double) 1/count)) {
+                champion = input;
+            }
+        }
+        StdOut.println(champion);
     }
 }
 
