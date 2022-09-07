@@ -1,7 +1,7 @@
 # kubernetes
 
-##Content
-####1. kind install
+## Content
+#### 1. kind install
 
 ```
 [ $(uname -m) = x86_64 ]&& curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.13.0/kind-darwin-amd64
@@ -9,13 +9,13 @@ chmod +x ./kind
 mv ./kind /some-dir-in-your-PATH/kind
 ```
 
-####2. kind create cluster
+### #2. kind create cluster
 
 ```
 ./kind create cluster --image kindest/node:v1.24.0
 ```
 
-####3. kubernetes terminology
+#### 3. kubernetes terminology
 
 3.1 kubectl
 - allow us to talk to api-server
@@ -107,7 +107,7 @@ added deleted or updates. Type of ingress controller
   + permission to namespace using RBAC
   + Roles and rolebinding permission to objects in a namespace  
   + cluster role and cluster rolebinding permission across all namespace
-##Reference
+## Reference
 
 [Lib] Kubernetes SIGs - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/) \
 [Code] Kubernetes SIGs - [kind](https://github.com/kubernetes-sigs/kind/) \
